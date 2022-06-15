@@ -4,7 +4,7 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import id.iglo.common.entity.movie_reviews.Result
+import id.iglo.common.entities.movie_reviews.Result
 import id.iglo.api_service.service.movie.GetMovieReviewsService
 
 class MovieReviewsDataSource(

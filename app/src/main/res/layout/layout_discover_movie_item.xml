@@ -3,7 +3,7 @@
     <data>
         <variable
             name="data"
-            type="id.iglo.common.entity.discover_movie.MovieResult" />
+            type="id.iglo.common.entities.discover_movie.MovieResult" />
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"

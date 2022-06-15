@@ -1,4 +1,4 @@
-package id.iglo.common.entity.discover_movie
+package id.iglo.common.entities.discover_movie
 
 
 import com.google.gson.annotations.SerializedName

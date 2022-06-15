@@ -8,7 +8,7 @@ import androidx.recyclerview.selection.ItemKeyProvider
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import id.iglo.common.entity.genre.Genre
+import id.iglo.common.entities.genre.Genre
 import id.iglo.moviedb.databinding.LayoutGenreItemBinding
 
 class GenreAdapter(

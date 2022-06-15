@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import id.iglo.common.entity.movie_reviews.Result
+import id.iglo.common.entities.movie_reviews.Result
 import id.iglo.moviedb.databinding.MovieReviewItemLayoutBinding
 
 class MovieReviewPagingAdapter: PagingDataAdapter<Result, MovieReviewViewHolder>(differ) {

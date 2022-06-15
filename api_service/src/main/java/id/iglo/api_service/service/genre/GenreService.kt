@@ -1,7 +1,7 @@
 package id.iglo.api_service.service.genre
 
 import id.iglo.api_service.Constants
-import id.iglo.common.entity.genre.GenreListResponse
+import id.iglo.common.entities.genre.GenreListResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

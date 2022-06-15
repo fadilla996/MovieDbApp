@@ -1,4 +1,4 @@
-package id.iglo.common.entity.genre
+package id.iglo.common.entities.genre
 
 
 import com.google.gson.annotations.SerializedName

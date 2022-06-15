@@ -1,12 +1,12 @@
 package id.iglo.api_service.paging
 
 
-import id.iglo.common.entity.discover_movie.MovieResult
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import id.iglo.api_service.service.movie.DiscoverMoviesService
+import id.iglo.common.entities.discover_movie.MovieResult
 
 class DiscoverMoviesDataSource (
     private val discoverMoviesService: DiscoverMoviesService,

@@ -10,7 +10,7 @@
             type="Boolean" />
         <variable
             name="data"
-            type="id.iglo.common.entity.genre.Genre" />
+            type="id.iglo.common.entities.genre.Genre" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

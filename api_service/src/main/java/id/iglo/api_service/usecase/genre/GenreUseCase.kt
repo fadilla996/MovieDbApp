@@ -2,7 +2,7 @@ package id.iglo.api_service.usecase.genre
 
 import id.iglo.api_service.service.genre.GenreService
 import id.iglo.common.base_response.AppResponse
-import id.iglo.common.entity.genre.Genre
+import id.iglo.common.entities.genre.Genre
 import kotlinx.coroutines.flow.flow
 
 class GenreUseCase(val genreService : GenreService) {

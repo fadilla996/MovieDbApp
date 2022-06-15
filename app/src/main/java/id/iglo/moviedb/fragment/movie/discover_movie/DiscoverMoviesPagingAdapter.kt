@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import id.iglo.common.entity.discover_movie.MovieResult
+import id.iglo.common.entities.discover_movie.MovieResult
 import id.iglo.moviedb.databinding.LayoutDiscoverMovieItemBinding
 
 class DiscoverMoviesPagingAdapter(

@@ -1,15 +1,14 @@
 package id.iglo.moviedb.fragment.movie.movie_detail
 
-import android.util.Log
 import android.view.View
+import androidx.annotation.NonNull
 import androidx.paging.LoadState
-import com.google.android.youtube.player.YouTubeInitializationResult
-import com.google.android.youtube.player.YouTubePlayer
-import com.google.android.youtube.player.YouTubePlayerSupportFragmentX
-import id.iglo.moviedb.R
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+
 
 fun MovieDetailFragment.observeLiveData() {
     binding.recycler.adapter = adapter.withLoadStateFooter(loadStateAdapter)
@@ -23,35 +22,19 @@ fun MovieDetailFragment.observeLiveData() {
             adapter.submitData(it)
         }
     }
-
+    lifecycle.addObserver(binding.videoTrailer)
     vm.movieVideoData.observe(this) {
-        val youtubeFragment = YouTubePlayerSupportFragmentX.newInstance()
-        with(parentFragmentManager){
-            beginTransaction().apply {
-                add(R.id.video_trailer, youtubeFragment)
-                commit()
-            }
-            youtubeFragment.initialize(
-                "AIzaSyCPx1H6RyEmr1smab8pkQduF8v5k85A4vg",
-                object : YouTubePlayerSupportFragmentX.OnInitializedListener(){
-                    override fun onInitializationSuccess(
-                        p0: YouTubePlayer.Provider?,
-                        p1: YouTubePlayer?,
-                        p2: Boolean
-                    ) {
-                        p1?.cueVideo(it)
-                    }
-
-                    override fun onInitializationFailure(
-                        p0: YouTubePlayer.Provider?,
-                        p1: YouTubeInitializationResult?
-                    ) {
-                        Log.e("YoutubePlayer", "error ${p1?.name}")
-                    }
+        binding.videoTrailer.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
+            override fun onReady(youTubePlayer: YouTubePlayer) {
+                super.onReady(youTubePlayer)
+                if (it != null) {
+                    youTubePlayer.loadVideo(it, 0F)
                 }
-            )
-        }
+            }
+        })
     }
+
+
 
     adapter.addLoadStateListener {
         if(it.refresh is LoadState.Error && adapter.itemCount == 0){

@@ -9,9 +9,8 @@ import id.iglo.api_service.usecase.movie.GetMovieDetailsUseCase
 import id.iglo.api_service.usecase.movie.GetMovieReviewsPagingUseCase
 import id.iglo.api_service.usecase.movie.GetMovieVideosUseCase
 import id.iglo.common.base_response.AppResponse
-import id.iglo.common.entity.discover_movie.MovieResult
-import id.iglo.common.entity.movie_details.MovieDetailsResponse
-import id.iglo.common.entity.movie_reviews.Result
+import id.iglo.common.entities.movie_details.MovieDetailsResponse
+import id.iglo.common.entities.movie_reviews.Result
 import id.iglo.common.ext.SingleLiveEvent
 import id.iglo.common.ui.BaseViewModel
 import kotlinx.coroutines.flow.collect

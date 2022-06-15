@@ -7,9 +7,8 @@ import androidx.recyclerview.selection.SelectionTracker
 import dagger.hilt.android.lifecycle.HiltViewModel
 import id.iglo.api_service.usecase.genre.GenreUseCase
 import id.iglo.common.base_response.AppResponse
-import id.iglo.common.entity.genre.Genre
+import id.iglo.common.entities.genre.Genre
 import id.iglo.common.ui.BaseViewModel
-import id.iglo.moviedb.fragment.genre.GenreFragmentDirections
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import javax.inject.Inject

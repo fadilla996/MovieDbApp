@@ -1,7 +1,7 @@
 package id.iglo.api_service.service.movie
 
 import id.iglo.api_service.Constants
-import id.iglo.common.entity.discover_movie.DiscoverMoviesResponse
+import id.iglo.common.entities.discover_movie.DiscoverMoviesResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

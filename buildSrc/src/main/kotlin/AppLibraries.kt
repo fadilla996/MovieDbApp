@@ -14,4 +14,5 @@ fun DependencyHandler.libraries(){
     retrofit()
     vmLifeCycle()
     googleFirebase()
+    youtubePlayer()
 }

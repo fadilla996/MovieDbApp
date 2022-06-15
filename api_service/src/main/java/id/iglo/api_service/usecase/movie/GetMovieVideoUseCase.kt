@@ -2,7 +2,7 @@ package id.iglo.api_service.usecase.movie
 
 import id.iglo.api_service.service.movie.GetMovieVideosService
 import id.iglo.common.base_response.AppResponse
-import id.iglo.common.entity.movie_videos.MovieVideosResponse
+import id.iglo.common.entities.movie_videos.MovieVideosResponse
 import kotlinx.coroutines.flow.flow
 
 class GetMovieVideosUseCase (private val getMovieVideosService: GetMovieVideosService){

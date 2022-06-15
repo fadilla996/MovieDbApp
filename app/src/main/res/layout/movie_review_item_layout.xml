@@ -5,7 +5,7 @@
     <data>
         <variable
             name="data"
-            type="id.iglo.common.entity.movie_reviews.Result" />
+            type="id.iglo.common.entities.movie_reviews.Result" />
 
         <import type="id.iglo.api_service.Constants"/>
     </data>

@@ -6,8 +6,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import dagger.hilt.android.lifecycle.HiltViewModel
 import id.iglo.api_service.usecase.movie.DiscoverMoviesPagingUseCase
-import id.iglo.common.entity.discover_movie.MovieResult
-import id.iglo.common.ext.SingleLiveEvent
+import id.iglo.common.entities.discover_movie.MovieResult
 import id.iglo.common.ui.BaseViewModel
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
