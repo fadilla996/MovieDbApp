@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout  xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
         <variable
             name="data"
             type="id.iglo.common.entities.discover_movie.MovieResult" />
+        <import type="id.iglo.api_service.Constants"/>
     </data>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -22,16 +19,38 @@
         app:cardElevation="5dp"
         android:id="@+id/cardView">
 
-        <TextView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tv_discover"
-            android:textColor="@color/black"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="@{data.component11()}"
-            />
-    </androidx.cardview.widget.CardView>
+            xmlns:custom="http://schemas.android.com/apk/res-auto"
+            >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                android:id="@+id/imagePoster"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="5dp"
+                custom:loadImage="@{Constants.IMAGE_PREFIX + data.component9()}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                custom:layout_constraintBottom_toBottomOf="parent"/>
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_discover"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="@{data.component11()}"
+                android:layout_gravity="center"
+                android:gravity="center"
+                app:layout_constraintStart_toEndOf="@id/imagePoster"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                custom:layout_constraintBottom_toBottomOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 </layout>

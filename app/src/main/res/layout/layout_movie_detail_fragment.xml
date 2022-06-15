@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
 
@@ -19,20 +21,33 @@
         android:scrollIndicators="top|left|bottom|start|end|right">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/cardview_dark_background"
         android:padding="12dp"
         tools:context=".activity.movie_details.MovieDetailsActivity">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textTrailer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Movie Trailer"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_movie_detail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/cardview_light_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@id/textTrailer">
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_movie_title"
@@ -40,7 +55,8 @@
                 android:layout_height="wrap_content"
                 android:text="@{data.originalTitle}"
                 android:textColor="@color/black"
-                android:textSize="24sp"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -50,51 +66,117 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_movie_title"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/tv_movie_title" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_overview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Overview"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/video_trailer" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_overview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="@{data.overview}"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/video_trailer" />
+                app:layout_constraintTop_toBottomOf="@+id/text_overview" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_genre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Genre"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_overview" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_genre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@{data.genres[0].name}"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_overview" />
+                app:layout_constraintTop_toBottomOf="@+id/text_genre" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_vote_average"
+                android:id="@+id/text_vote"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{String.format(`Rating: %.2f`, data.voteAverage)}"
+                android:text="Vote Average"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_genre" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_vote_count"
+                android:id="@+id/tv_vote_average"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{String.format(`Vote count: %d`, data.voteCount)}"
+                android:textColor="@color/black"
+                android:text="@{String.format(`Rating: %.2f`, data.voteAverage)}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_vote" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_vote_count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Vote Count"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_vote_average" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_vote_count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="@{String.format(`Vote count: %d`, data.voteCount)}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_vote_count" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_movie_review"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Movie Review"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_vote_count" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintTop_toBottomOf="@+id/tv_vote_count" />
+                app:layout_constraintTop_toBottomOf="@+id/text_movie_review" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ProgressBar

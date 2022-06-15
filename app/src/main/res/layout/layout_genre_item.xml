@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             app:cardBackgroundColor="@{isSelected?@color/genre_selection_color:@color/white}"
             android:id="@+id/card"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:padding="5dp"
             app:cardCornerRadius="20dp"
             app:cardElevation="5dp"
@@ -36,6 +36,8 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
                 android:text="@{data.component2()}" />
 
         </androidx.cardview.widget.CardView>
